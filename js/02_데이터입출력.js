@@ -1,4 +1,4 @@
-// ㅑinnerText 읽어오기
+// innerText 읽어오기
 function getInnerText() {
 
     // HTML 문서 내에서 아이디가 "test1"인 요소를 얻어와

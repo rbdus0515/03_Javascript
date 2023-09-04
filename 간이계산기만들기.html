@@ -10,12 +10,16 @@
 <body>
     <h3>간이 계산기 만들기</h3>
     
-    
+    첫번째 값 : <input id="num1"><br>
+    두번째 값 : <input id="num2"><br>
 
-    <button type="button">+</button>
-    <button type="button">-</button>
-    <button type="button">*</button>
-    <button type="button">/</button>
-    <button type="button">%</button>
+    <button onclick="calculate('+')">+</button>
+    <button onclick="calculate('-')">-</button>
+    <button onclick="calculate('*')">*</button>
+    <button onclick="calculate('/')">/</button>
+    <button onclick="calculate('%')">%</button>
+
+    <br>
+    계산 결과 : <span id="result"></span>
 </body>
 </html>

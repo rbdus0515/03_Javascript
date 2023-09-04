@@ -90,7 +90,7 @@ function readValue() {
     const input = document.querySelector("#chatting-input");
 
     // input에 입력된 값이 있는 경우
-    if( iinput.value.trim().length > 0 ) {
+    if( input.value.trim().length > 0 ) {
         // 문자열.trim() : 문자열 양 끝에 공백을 모두 제거
         // ex) "           K  H   " => "K  H"
         // ex) "          " => ""
