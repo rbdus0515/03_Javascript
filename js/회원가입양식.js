@@ -19,19 +19,31 @@ document.getElementById("clickButton").addEventListener("click", function() {
 });
 
 // 비밀번호, 비밀번호 확인 : 키보드가 올라올 때
+// 성공
 document.getElementById("inputPwConfirm").addEventListener("keyup" , function() {
 
+    const span = document.getElementById("pwMessage");
+
+
     if(inputPw.value == 0) {
-        this.innerText = "";
         alert("비밀번호를 입력해주세요.");
         document.getElementById("inputPw").focus();
+        inputPwConfirm.value = null;
         return;
     }
 
+    if(inputPwConfirm.value == inputPw.value) {
+        span.innerText = "비밀번호 일치";
+        span.style.color = "green";
+    } else {
+        span.innerText = "비밀번호 불일치";
+        span.style.color = "red";
+    }
 
 });
 
 // 이름 확인
+// 성공?
 document.getElementById("inputName").addEventListener("keyup", function() {
 
     const span = document.getElementById("nameMessage");
