@@ -21,23 +21,23 @@ function accessClass() {
     console.log(arr);
 
     // 인덱스를 이용해서 요소 하나씩 접근
-    arr[0].style.backgroumdColor = 'pink';
+    arr[0].style.backgroundColor = 'pink';
     arr[0].innerText = "첫번째 요소";
 
-    arr[1].style.backgroumdColor = 'red';
+    arr[1].style.backgroundColor = 'red';
     arr[1].innerText = "두번째 요소";
 
-    arr[2].style.backgroumdColor = 'yellow';
+    arr[2].style.backgroundColor = 'yellow';
     arr[2].innerText = "세번째 요소";
 }
 
-function accssTagName() {
+function accessTagName() {
     const arr = document.getElementsByTagName("li");
 
     console.log(arr);
 
     for(let i = 0; i < arr.length; i++) {
-        const num = arr[1].innerText;
+        const num = arr[i].innerText;
         arr[i].style.backgroundColor = "rgb(130,220," + (50 * num) + ")";
     }
 }
@@ -45,29 +45,31 @@ function accssTagName() {
 
 // name으로 접근하기
 function accessName() {
-    const hobbyList = document.getElementsByTagName("hobby");
 
+    const hobbyList = document.getElementsByName("hobby");
+    
     let str = "";
-    let conut = 0;
+    let count = 0;
     for(let i=0; i<hobbyList.length; i++) {
         
         // radio. checkbox 전용 속성
         // .checked : 해당 요소가 체크되어 있으면 true, 아니면 false 반환
         if(hobbyList[i].checked) {
-            str += hobbyList[i].valer + " ";
+            str += hobbyList[i].value + " ";
 
-            count ++;
+            count++;
         }
     }
     document.getElementById("name-div").innerText = str;
     
-    document.getElementById("name-div").innerHTML += "<br><br>"
+    document.getElementById("name-div").innerHTML += "<br><br>선택된 개수 : " + count;
 
 }
 
 function accessCss() {
+
     // querySelector() : 요소 1개 선택 시 사용
-    // 여러 요소가 있다면 첫번째 요소만 선택
+    //  여러 요소가 있다면 첫번째 요소만 선택
 
     document.querySelector("#css-div").style.border = "3px solid red";
 
@@ -77,7 +79,7 @@ function accessCss() {
     const arr = document.querySelectorAll("#css-div > div");
 
     for(let i=0; i < arr.length; i++) {
-        arr[i].style.backgroumdColor = 'gold';
+        arr[i].style.backgroundColor = 'gold';
     }
 }
 

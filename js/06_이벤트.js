@@ -116,11 +116,11 @@ document.getElementById("input1").addEventListener("change", function() {
 });
 
 // a태그 기본 이벤트 제거
-document.getElementById("moveNaver").addEventListener("click", function() {
+document.getElementById("moveNaver").addEventListener("click", function(e) {
 
     // 매개변수 e 또는 event == 이벤트 발생 객체
     // 이벤트와 관련된 정보가 담겨있는 객체
 
-    e.preventDefault(); // HTML 요소가 가지고 있는 기본 이벤트를 막음(제거)
+    e.preventDefault(); // HTML 요소가 가지고있는 기본 이벤트를 막음(제거)
 
 });
