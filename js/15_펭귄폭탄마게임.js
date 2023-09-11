@@ -1,28 +1,35 @@
-function() {
-    document.addEventListener("keydown",function() {
+let xindex = 0;
+let yindex = 0;
 
-        let key = e.keyCode;
+document.addEventListener("keydown", function() {
 
-        let.main = document.getElementById("main");
+    console.log("누르는중" + e.key);
 
-        let X = parseInt(main.style.top || 0, 10);
-        
-        let y = parseInt(main.style.top || 0, 10);
+    const peng = document.getElementById("peng");
+    const boom = document.createElement("img");
 
 
-        if( key == 37 ) {
-            main.style.left = x - 50 + "px";
-        }
-        if( key == 38 ) {
-            main.style.left = y - 50 + "px";
-        }
-        if( key == 39 ) {
-            main.style.left = x + 50 + "px";
-        }
-        if( key == 40 ) {
-            main.style.left = y + 50 + "px";
-        }
-        
+    if(e.key == "ArrowRight") {
+        xindex += 10;
+        peng.style.transform = 'translate3d(${xindex}px,${yindex}px,0)';
+    } else if (e.key == "ArrowLeft") {
+        xindex -= 10;
+        peng.style.transform = 'translate3d(${xindex}px,${yindex}px,0)';
+    } else if (e.key == "ArrowDown") {
+        peng.style.transform = 'translate3d(${xindex}px,${yindex}px,0)';
+    } else if (e.key == "ArrowUp") {
+        peng.style.transform = 'translate3d(${xindex}px,${yindex}px,0)';
+    } else if (e.key == 'x') {
 
-    });
-}
+        const box = document.getElementById("box");
+        boom.setAttribute("src", "../images/boom.png");
+        boom.style.transform = 'translate3d(${xindex}px,${yindex}px,0)';
+        boom.style.position = "absolute";
+        box.append(boom);
+
+    }
+
+    setTimeout(function () {
+        boom.setAttribute("src", "../images/bppm2.png");
+    }, 2000);
+});
