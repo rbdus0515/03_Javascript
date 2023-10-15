@@ -66,6 +66,7 @@ function accessName() {
 
 }
 
+// CSS로 접근하기
 function accessCss() {
 
     // querySelector() : 요소 1개 선택 시 사용
